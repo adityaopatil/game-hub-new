@@ -1,27 +1,23 @@
-import { Box, Flex, Grid, GridItem, HStack, Show } from "@chakra-ui/react";
-import NavBar from "./components/NavBar";
-import GameGrid from "./components/GameGrid";
-import GenreList from "./components/GenreList";
-import PlatformSelector from "./components/PlatformSelector";
-import SortSelector from "./components/SortSelector";
-import GameHeading from "./components/GameHeading";
+import { Box, Flex, Grid, GridItem, Show } from "@chakra-ui/react";
+import GenreList from "../components/GenreList";
+import GameHeading from "../components/GameHeading";
+import PlatformSelector from "../components/PlatformSelector";
+import SortSelector from "../components/SortSelector";
+import GameGrid from "../components/GameGrid";
 
-function App() {
+const HomePage = () => {
   return (
     <>
       <Grid
         templateAreas={{
-          base: `"nav" "main"`,
-          lg: `"nav nav" "aside main"`, //larger devices which are more than 1020px
+          base: `"main"`,
+          lg: `"aside main"`, //larger devices which are more than 1020px
         }}
         templateColumns={{
           base: "1fr",
           lg: "200px 1fr",
         }}
       >
-        <GridItem area="nav">
-          <NavBar />
-        </GridItem>
         <Show above="lg">
           {" "}
           {/**The Show component will only show this GridItem when screen size is above lg */}
@@ -44,6 +40,6 @@ function App() {
       </Grid>
     </>
   );
-}
+};
 
-export default App;
+export default HomePage;
